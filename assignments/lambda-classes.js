@@ -47,8 +47,7 @@ class Student extends Person{
     }
 
     listSubjects() {
-       console.log(`${this.name}'s favorite subjects are:`);
-        this.favSubjects.map(item => console.log(item));
+        this.favSubjects.forEach(index => console.log(index));
     }
 
     PRAssignment(subject) {
@@ -66,8 +65,8 @@ const anna = new Student({
     age: 24,
     previousBackground: 'Cake Decorator',
     className: 'WEBPT-8',
-    favSubjects: [ 'CSS',
-    'HTML', 'JavaScript', 'Lunch' ],
+    favSubjects: ["CSS",
+    "HTML", "JavaScript", "Lunch"]
   });
 
   const slackChannel = [
