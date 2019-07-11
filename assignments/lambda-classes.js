@@ -70,10 +70,6 @@ const anna = new Student({
     "HTML", "JavaScript", "Lunch"],
   });
 
-  const slackChannel = [
-      'webpt8', 'webpt8_Clarissa'
-  ]
-
 class TeamLeader extends Instructor{
     constructor(tL) {
         super(tL);
