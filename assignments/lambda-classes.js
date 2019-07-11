@@ -44,20 +44,19 @@ class Student extends Person{
         this.previousBackground = student.previousBackground;
         this.className = student.className;
         this.favSubjects = student.favSubjects;
-        this.currentSubject = student.currentSubject;
     }
 
     listSubjects() {
        console.log(`${this.name}'s favorite subjects are:`);
-        this.favSubjects.forEach(item => console.log(item));
+        this.favSubjects.map(item => console.log(item));
     }
 
-    PRAssignment() {
-        return `${this.name} has submitted a PR for ${this.currentSubject}`
+    PRAssignment(subject) {
+        return `${this.name} has submitted a PR for ${subject}`
     }
 
-    sprintChallenge() {
-        return `${this.name} has begun sprint challenge on ${this.currentSubject}`
+    sprintChallenge(subject) {
+        return `${this.name} has begun sprint challenge on ${subject}`
     }
 }
 
@@ -68,8 +67,7 @@ const anna = new Student({
     previousBackground: 'Cake Decorator',
     className: 'WEBPT-8',
     favSubjects: [ 'CSS',
-    'HTML', 'JavaScript' ],
-    currentSubject: 'JavaScript Fundamentals'
+    'HTML', 'JavaScript', 'Lunch' ],
   });
 
   const slackChannel = [
@@ -81,26 +79,24 @@ class TeamLeader extends Instructor{
         super(tL);
         this.gradClassName = tL.gradClassName;
         this.favInstructor = tL.favInstructor;
-        this.slackChannel = tL.slackChannel;
     }
 
-    standUp(slackChannel) {
-        return `${tL.name} announces to ${slackChannel[1]}, @ channel standy times!`
+    standUp(channel) {
+        return `${tL.name} announces to ${channel}, @ channel standy times!`
     }
 
     debugsCode(student, subject) {
-        return `${tL.name} debugs ${student.name}'s code on ${subject}`
+        return `${this.name} debugs ${student.name}'s code on ${subject}`
     }
 }
 
-const clarissa = {
+const clarissa = new TeamLeader({
     name: 'Clarissa',
     age: 30,
     location: 'Michigan',
     gradClassName: 'CS1',
     favInstructor: 'Sean',
-    slackChannel: 'Clarissa (TL) Slack Channel'
-}
+});
 
 console.log(fred);
 console.log(anna);
@@ -113,5 +109,7 @@ console.log(anna.speak());
 console.log(anna.listSubjects());
 console.log(fred.grade(anna, 'HTML & CSS'));
 
-console.log(anna.PRAssignment());
-console.log(anna.sprintChallenge());
+console.log(anna.PRAssignment('JavaScript Fundamentals'));
+console.log(anna.sprintChallenge('JavaScript Fundamentals'));
+
+console.log(clarissa.debugsCode(anna, 'JavaScript Fundamentals'));
