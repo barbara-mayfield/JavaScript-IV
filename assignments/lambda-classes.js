@@ -47,7 +47,7 @@ class Student extends Person{
     }
 
     listSubjects() {
-        return favSubjects[i];
+        return `${this.favSubjects}`;
     }
 
     PRAssignment(subject) {
@@ -69,18 +69,23 @@ const anna = new Student({
     'HTML', 'JavaScript' ]
   });
 
+  const slackChannel = [
+      'webpt8', 'webpt8_Clarissa'
+  ]
+
 class TeamLeader extends Instructor{
     constructor(tL) {
         super(tL);
         this.gradClassName = tL.gradClassName;
         this.favInstructor = tL.favInstructor;
+        this.slackChannel = tL.slackChannel;
     }
 
-    standUP(slackChannel) {
-        return `${tL.name} announces to ${slackChannel}, @ channel standy times!`
+    standUp(slackChannel) {
+        return `${tL.name} announces to ${slackChannel[1]}, @ channel standy times!`
     }
 
-    debugsCode(studentObj, subject) {
+    debugsCode(student, subject) {
         return `${tL.name} debugs ${student.name}'s code on ${subject}`
     }
 }
@@ -91,8 +96,12 @@ const clarissa = {
     location: 'Michigan',
     gradClassName: 'CS1',
     favInstructor: 'Sean',
+    slackChannel: 'Clarissa (TL) Slack Channel'
 }
 
 console.log(fred);
 console.log(anna);
 console.log(clarissa);
+
+console.log(anna.speak());
+console.log(anna.listSubjects());
