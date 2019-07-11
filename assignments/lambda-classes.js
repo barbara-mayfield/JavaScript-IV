@@ -20,13 +20,12 @@ class Instructor extends Person{
     this.catchPhrase = instAttr.catchPhrase;
     }
 
-    demo() {
-        let subject = 'Object Oriented Programming';
+    demo(subject) {
         return `${this.name} says, "Today we are learning about ${subject}!"`
     }
 
     grade(student, subject) {
-        return `${student.name} receives a perfect score on ${subject}`
+        return `${student.name} receives a perfect score on ${subject}.`
     }
 }
 
@@ -49,7 +48,8 @@ class Student extends Person{
     }
 
     listSubjects() {
-        return `${this.name}'s favorite subjects are ${this.favSubjects}.`;
+       console.log(`${this.name}'s favorite subjects are:`);
+        this.favSubjects.forEach(item => console.log(item));
     }
 
     PRAssignment() {
@@ -107,11 +107,11 @@ console.log(anna);
 console.log(clarissa);
 
 console.log(fred.speak());
+console.log(fred.demo('JavaScript Fundamentals'));
+
 console.log(anna.speak());
-
-console.log(fred.demo());
-console.log(fred.grade());
-
 console.log(anna.listSubjects());
+console.log(fred.grade(anna, 'HTML & CSS'));
+
 console.log(anna.PRAssignment());
 console.log(anna.sprintChallenge());
