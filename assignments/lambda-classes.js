@@ -38,8 +38,6 @@ const fred = new Instructor({
     catchPhrase: `Don't forget the homies`
   });
 
-  console.log(fred);
-
 class Student extends Person{
     constructor(student){
         super(student);
@@ -71,8 +69,6 @@ const anna = new Student({
     'HTML', 'JavaScript' ]
   });
 
-  console.log(anna);
-
 class TeamLeader extends Instructor{
     constructor(tL) {
         super(tL);
@@ -88,3 +84,15 @@ class TeamLeader extends Instructor{
         return `${tL.name} debugs ${student.name}'s code on ${subject}`
     }
 }
+
+const clarissa = {
+    name: 'Clarissa',
+    age: 30,
+    location: 'Michigan',
+    gradClassName: 'CS1',
+    favInstructor: 'Sean',
+}
+
+console.log(fred);
+console.log(anna);
+console.log(clarissa);
