@@ -48,6 +48,7 @@ class Student extends Person{
 
     listSubjects() {
         this.favSubjects.forEach(index => console.log(index));
+        return this.favSubjects;
     }
 
     PRAssignment(subject) {
@@ -66,7 +67,7 @@ const anna = new Student({
     previousBackground: 'Cake Decorator',
     className: 'WEBPT-8',
     favSubjects: ["CSS",
-    "HTML", "JavaScript", "Lunch"]
+    "HTML", "JavaScript", "Lunch"],
   });
 
   const slackChannel = [
@@ -105,7 +106,7 @@ console.log(fred.speak());
 console.log(fred.demo('JavaScript Fundamentals'));
 
 console.log(anna.speak());
-console.log(anna.listSubjects());
+console.log(anna.listSubjects(), 'favorite subjects');
 console.log(fred.grade(anna, 'HTML & CSS'));
 
 console.log(anna.PRAssignment('JavaScript Fundamentals'));
