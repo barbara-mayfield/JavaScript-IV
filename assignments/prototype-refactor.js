@@ -8,37 +8,73 @@ Prototype Refactor
 
 */
 
-function GameObject(attr) {
-    this.createdAt = attr.createdAt;
-    this.name = attr.name;
-    this.dimensions = attr.dimensions;
-  }
+// function GameObject(attr) {
+//     this.createdAt = attr.createdAt;
+//     this.name = attr.name;
+//     this.dimensions = attr.dimensions;
+//   }
   
-  GameObject.prototype.destroy = function() {
-    return `${this.name} was removed from the game.`
-  }
+//   GameObject.prototype.destroy = function() {
+//     return `${this.name} was removed from the game.`
+//   }
+
+class GameObject {
+    constructor(attr){
+        this.createdAt = attr.createdAt;
+        this.name = attr.name;
+        this.dimensions = attr.dimensions;
+    }
+
+    destroy() { 
+        return `${this.name} was removed from the game.`
+    }
+}
   
-  function CharacterStats(charStats) {
-    GameObject.call(this, charStats);
-    this.healthPoints = charStats.healthPoints;
-  }
+//   function CharacterStats(charStats) {
+//     GameObject.call(this, charStats);
+//     this.healthPoints = charStats.healthPoints;
+//   }
   
-  CharacterStats.prototype = Object.create(GameObject.prototype);
-  CharacterStats.prototype.takeDamage = function() {
-    return `${this.name} took damage.`
-  }
+//   CharacterStats.prototype = Object.create(GameObject.prototype);
+//   CharacterStats.prototype.takeDamage = function() {
+//     return `${this.name} took damage.`
+//   }
+
+class CharacterStats extends GameObject {
+    constructor(charStats){
+        super(charStats);
+        this.healthPoints = charStats.healthPoints;
+    }
+
+    takeDamage() {
+        return `${this.name} took damage.`
+    }
+}
   
-  function Humanoid(human) {
-    CharacterStats.call(this, human);
-    this.team = human.team;
-    this.weapons = human.weapons;
-    this.language = human.language;
-  }
+//   function Humanoid(human) {
+//     CharacterStats.call(this, human);
+    // this.team = human.team;
+    // this.weapons = human.weapons;
+    // this.language = human.language;
+//   }
   
-  Humanoid.prototype = Object.create(CharacterStats.prototype);
-  Humanoid.prototype.greet = function() {
-    return `${this.name} offers a greeting in ${this.language}.`;
-  }
+//   Humanoid.prototype = Object.create(CharacterStats.prototype);
+//   Humanoid.prototype.greet = function() {
+//     return `${this.name} offers a greeting in ${this.language}.`;
+//   }
+
+class Humanoid extends CharacterStats {
+    constructor(human) {
+        super(human);
+        this.team = human.team;
+        this.weapons = human.weapons;
+        this.language = human.language;
+    }
+
+    greet() {
+        return `${this.name} offers a greeting in ${this.language}.`;
+    }
+}
   
   // Test you work by un-commenting these 3 objects and the list of console logs below:
   
