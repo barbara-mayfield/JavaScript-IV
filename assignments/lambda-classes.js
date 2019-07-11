@@ -110,6 +110,7 @@ console.log(fred.speak());
 console.log(anna.speak());
 
 console.log(fred.demo());
+console.log(fred.grade());
 
 console.log(anna.listSubjects());
 console.log(anna.PRAssignment());
