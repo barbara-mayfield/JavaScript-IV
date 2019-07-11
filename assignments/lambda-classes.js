@@ -44,18 +44,19 @@ class Student extends Person{
         this.previousBackground = student.previousBackground;
         this.className = student.className;
         this.favSubjects = student.favSubjects;
+        this.currentSubject = student.currentSubject;
     }
 
     listSubjects() {
         return `${this.favSubjects}`;
     }
 
-    PRAssignment(subject) {
-        return `${student.name} has submitted a PR for ${subject}`
+    PRAssignment() {
+        return `${this.name} has submitted a PR for ${this.currentSubject}`
     }
 
-    sprintChallenge(subject) {
-        return `${student.name} has begun sprint challenge on ${subject}`
+    sprintChallenge() {
+        return `${this.name} has begun sprint challenge on ${this.currentSubject}`
     }
 }
 
@@ -66,7 +67,8 @@ const anna = new Student({
     previousBackground: 'Cake Decorator',
     className: 'WEBPT-8',
     favSubjects: [ 'CSS',
-    'HTML', 'JavaScript' ]
+    'HTML', 'JavaScript' ],
+    currentSubject: 'JavaScript Fundamentals'
   });
 
   const slackChannel = [
@@ -105,3 +107,5 @@ console.log(clarissa);
 
 console.log(anna.speak());
 console.log(anna.listSubjects());
+console.log(anna.PRAssignment());
+console.log(anna.sprintChallenge());
