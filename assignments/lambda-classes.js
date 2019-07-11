@@ -20,8 +20,9 @@ class Instructor extends Person{
     this.catchPhrase = instAttr.catchPhrase;
     }
 
-    demo(subject) {
-        return `Today we are learning about ${subject}`
+    demo() {
+        let subject = 'Object Oriented Programming';
+        return `${this.name} says, "Today we are learning about ${subject}!"`
     }
 
     grade(student, subject) {
@@ -48,7 +49,7 @@ class Student extends Person{
     }
 
     listSubjects() {
-        return `${this.favSubjects}`;
+        return `${this.name}'s favorite subjects are ${this.favSubjects}.`;
     }
 
     PRAssignment() {
@@ -105,7 +106,11 @@ console.log(fred);
 console.log(anna);
 console.log(clarissa);
 
+console.log(fred.speak());
 console.log(anna.speak());
+
+console.log(fred.demo());
+
 console.log(anna.listSubjects());
 console.log(anna.PRAssignment());
 console.log(anna.sprintChallenge());
