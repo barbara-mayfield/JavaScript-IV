@@ -81,7 +81,7 @@ class TeamLeader extends Instructor{
     }
 
     standUp(channel) {
-        return `${tL.name} announces to ${channel}, @ channel standy times!`
+        return `${this.name} announces to ${channel}, @ channel standy times!`
     }
 
     debugsCode(student, subject) {
@@ -111,4 +111,5 @@ console.log(fred.grade(anna, 'HTML & CSS'));
 console.log(anna.PRAssignment('JavaScript Fundamentals'));
 console.log(anna.sprintChallenge('JavaScript Fundamentals'));
 
+console.log(clarissa.standUp('webptX_clarissa'));
 console.log(clarissa.debugsCode(anna, 'JavaScript Fundamentals'));
