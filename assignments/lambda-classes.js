@@ -76,6 +76,17 @@ const anna = new Student({
     grade: 96
   });
 
+const joel = new Student({
+    name: 'Joel',
+    location: 'Seattle, Washington',
+    age: 31,
+    previousBackground: 'Construction',
+    className: 'WEBPT-8',
+    favSubjects: ["React",
+    "Web Applications", "Java frameworks", "Lunch"],
+    grade: 78
+  });
+
 class TeamLeader extends Instructor{
     constructor(tL) {
         super(tL);
