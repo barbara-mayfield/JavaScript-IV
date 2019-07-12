@@ -63,8 +63,15 @@ class Student extends Person{
     sprintChallenge(subject) {
         return `${this.name} has begun sprint challenge on ${subject}`
     }
-}
 
+    graduate() {
+        if(this.grade >= 70) {
+            return `${this.name} is ready to graduate!`
+        } else {
+            return `${this.name} needs to work some more.`
+        }
+    }
+}
 const anna = new Student({
     name: 'Anna',
     location: 'Albuquerque, New Mexico',
@@ -129,3 +136,6 @@ console.log(clarissa.standUp('webptX_clarissa'));
 console.log(clarissa.debugsCode(anna, 'JavaScript Fundamentals'));
 
 console.log(fred.getRandomGrade(anna, 100));
+
+console.log(anna.graduate());
+console.log(joel.graduate());
