@@ -27,6 +27,11 @@ class Instructor extends Person{
     grade(student, subject) {
         return `${student.name} receives a perfect score on ${subject}.`
     }
+
+    getRandomGrade(student, max) {
+        console.log(`${this.name} gives ${student.name} a grade of:`);
+        return Math.floor(Math.random() * Math.floor(max));
+      }
 }
 
 const fred = new Instructor({
@@ -68,6 +73,7 @@ const anna = new Student({
     className: 'WEBPT-8',
     favSubjects: ["CSS",
     "HTML", "JavaScript", "Lunch"],
+    grade: 96
   });
 
 class TeamLeader extends Instructor{
@@ -110,3 +116,5 @@ console.log(anna.sprintChallenge('JavaScript Fundamentals'));
 
 console.log(clarissa.standUp('webptX_clarissa'));
 console.log(clarissa.debugsCode(anna, 'JavaScript Fundamentals'));
+
+console.log(fred.getRandomGrade(anna, 100));
